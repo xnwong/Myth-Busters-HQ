@@ -1,52 +1,68 @@
-
-html {
-  body {
+html, body {
   height: 100%;
   width: 100%;
   background-color: rgb(12, 0, 0);
-  h1 {
-      color: whitesmoke;
-    }
-  h2 {
-     color:navajowhite;
-     }
-    .myth-breaking-section {
-      display: flex;
-      align-items: center; /* Aligns image and text vertically */
-      gap: 20px; /* Adds spacing between image and text */
-    }
-
-    .myth-image {
-      width: 500px; 
-      height: auto;
-      margin-top: 20px;
-    }
-
-    .myth-description {
-      font-size: 1.2em;
-      color: #333;
-      display: block;/* Darker text for readability */
-    }
-
-  p {
-      color: white;
-    }
-    .text-box {
-      background-color:rgb(200, 91, 50); /* Orange background */
-      color: #ffffff; /* White text */
-      padding: 20px; /* Inside spacing */
-      margin: 20px auto; /* Center boxes with space around */
-      border-radius: 10px; /* Rounded corners */
-      width: 80%; /* Box width */
-      max-width: 600px; /* Limit box width on large screens */
-      text-align: center; /* Center-align text */
-      box-shadow: 0 5px 8px rgb(153, 0, 0, 0.3); /* Soft shadow for depth */
-    }
-    .text-box h3 {
-      margin-bottom: 10px; /* Spacing below heading */
-      font-size: 30px; /* Adjust heading size */
-    }
-    .text-box p {
-      font-size: 25px; /* Adjust paragraph text size */
-      margin: 0;
+  margin: 0; /* Removes default browser margin */
+  padding: 0;
 }
+
+h1 {
+  color: whitesmoke;
+  text-align: center;
+}
+
+h2 {
+  color: navajowhite;
+  text-align: center;
+}
+
+.myth-breaking-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px; /* Adds spacing between image and text */
+  margin: 20px; /* Adds spacing around the section */
+}
+
+.myth-image {
+  width: 500px; 
+  height: auto;
+  margin-top: 20px;
+}
+.myth-content {
+  display: flex;
+  flex-direction: column; /* Stack "What is myth?" and "Break a myth" vertically */
+  gap: 10px; /* Space between the sections */
+  color: white;
+}
+.myth-description {
+  font-size: 1.2em;
+  color: white; /* Adjusted for better readability on dark background */
+  margin-bottom: 20px;
+}
+
+p {
+  color: white;
+}
+
+.text-box {
+  background-color: rgb(200, 91, 50); /* Orange background */
+  color: #ffffff; /* White text */
+  padding: 20px; /* Inside spacing */
+  margin: 20px auto; /* Center boxes with space around */
+  border-radius: 10px; /* Rounded corners */
+  width: 80%; /* Box width */
+  max-width: 600px; /* Limit box width on large screens */
+  text-align: center; /* Center-align text */
+  box-shadow: 0 5px 8px rgba(153, 0, 0, 0.3); /* Soft shadow for depth */
+}
+
+.text-box h3 {
+  margin-bottom: 10px; /* Spacing below heading */
+  font-size: 30px; /* Adjust heading size */
+}
+
+.text-box p {
+  font-size: 25px; /* Adjust paragraph text size */
+  margin: 0;
+}
+

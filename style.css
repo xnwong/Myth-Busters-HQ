@@ -5,6 +5,12 @@ html, body {
   margin: 0; /* Removes default browser margin */
   padding: 0;
 }
+nav {
+  text-align:right ;
+  float: center;
+  background:rgb(255, 254, 238);
+  padding: 25px;
+}
 header {
   background-color: rgb(226, 97, 70);
   padding: 30px;

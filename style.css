@@ -5,6 +5,13 @@ html, body {
   margin: 0; /* Removes default browser margin */
   padding: 0;
 }
+header {
+  background-color: rgb(226, 97, 70);
+  padding: 30px;
+  padding-bottom:10px;
+  text-align: center;
+  font-size: 15px;
+}
 
 h1 {
   color: whitesmoke;
@@ -25,7 +32,7 @@ h2 {
 
 .myth-image {
   width: 600px; 
-  height: auto;
+  height:550px;
   margin-top: 20px;
   margin-left:50px;
   padding-right:20px;
@@ -67,7 +74,7 @@ p {
   gap: 20px; /* Adjust spacing between boxes */
 }
 .text-box {
-  background-color: rgb(200, 91, 50); 
+  background-color:rgb(200, 91, 50); 
   color: #ffffff; /* White text */
   padding: 20px; 
   padding-bottom: 80px;
@@ -91,6 +98,7 @@ p {
   font-size: 30px; /* Adjust paragraph text size */
   margin: 0;
   padding: 0;
+  word-wrap: break-word; 
 }
 
 

@@ -19,11 +19,13 @@ html {
     .myth-image {
       width: 500px; 
       height: auto;
+      margin-top: 20px;
     }
 
     .myth-description {
       font-size: 1.2em;
-      color: #333; /* Darker text for readability */
+      color: #333;
+      display: block;/* Darker text for readability */
     }
 
   p {

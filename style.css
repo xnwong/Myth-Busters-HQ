@@ -36,7 +36,7 @@ h2 {
   flex-direction: column; /* Stack "What is myth?" and "Break a myth" vertically */
   gap: 20px; /* Space between the sections */
   color: white;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-right: 60px;
 }
 
@@ -61,12 +61,20 @@ h2 {
 p {
   color: white;
 }
-
+.text-box-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; /* Adjust spacing between boxes */
+}
 .text-box {
-  background-color: rgb(200, 91, 50); /* Orange background */
+  background-color: rgb(200, 91, 50); 
   color: #ffffff; /* White text */
-  padding: 20px; /* Inside spacing */
-  margin: 20px auto; /* Center boxes with space around */
+  padding: 20px; 
+  padding-bottom: 80px;
+  padding-left:30px;
+  padding-right:30px;
+  margin: 40px ;
+  margin-top:20px;/* Center boxes with space around */
   border-radius: 10px; /* Rounded corners */
   width: 80%; /* Box width */
   max-width: 600px; /* Limit box width on large screens */
@@ -76,12 +84,13 @@ p {
 
 .text-box h3 {
   margin-bottom: 10px; /* Spacing below heading */
-  font-size: 30px; /* Adjust heading size */
+  font-size: 40px; /* Adjust heading size */
 }
 
 .text-box p {
-  font-size: 25px; /* Adjust paragraph text size */
+  font-size: 30px; /* Adjust paragraph text size */
   margin: 0;
+  padding: 0;
 }
 
 

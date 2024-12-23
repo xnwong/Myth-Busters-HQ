@@ -28,16 +28,28 @@ h2 {
   height: auto;
   margin-top: 20px;
 }
+
 .myth-content {
   display: flex;
   flex-direction: column; /* Stack "What is myth?" and "Break a myth" vertically */
-  gap: 10px; /* Space between the sections */
+  gap: 20px; /* Space between the sections */
   color: white;
 }
+
 .myth-description {
   font-size: 1.2em;
   color: white; /* Adjusted for better readability on dark background */
-  margin-bottom: 20px;
+  margin-left: 20px; /* Aligns with image */
+}
+
+.myth-description h2 {
+  margin: 0;
+  padding-left: 20px; 
+}
+
+.myth-description p {
+  margin: 0;
+  padding-left: 20px; /* Aligns with heading */
 }
 
 p {
@@ -65,4 +77,5 @@ p {
   font-size: 25px; /* Adjust paragraph text size */
   margin: 0;
 }
+
 

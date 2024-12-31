@@ -1,22 +1,183 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="style.css">
-
-<title> Myth Busters HQ </title>
 <nav>
-    <a href="index.html">Home</a>
-    <a href="Explore Myths.html">Explore Myths</a>
-    <a href=>Myth Hunt</a>
-    <a href=>Submit a Myth</a>
+  <div class="logo-container">
+    <img src="img/logo.png" alt="Myth Buster Logo" class="logo">
+    <span class="site-title">Myth Buster HQ</span>
+  </div>
+  <div class="nav-links">
+  <a href="index.html" class="hover-underline-animation">Home</a>
+  <a href="Explore Myths.html" class="hover-underline-animation">Explore Myths</a>
+  <a href="Myth Hunt.html" class="hover-underline-animation">Myth Quiz</a>
+  <a href="Submit a Myth.html" class="hover-underline-animation">Submit a Myth</a>
+</div>
 </nav>
-    <div class="special-section">
-    <h3 style="color: white"><strong>✨ Myth Hunt Challenge:</strong></h3>
-      <p>Think you're a myth-busting master? Find and uncover hidden truths across these categories:</p>
-      <ul style="text-align: left; margin: 10px 20px;">
-        <li style="color: white"><strong style="color: white">🔍 Science Sleuth:</strong> Find 3 science myths and reveal the shocking truth.</li>
-        <li style="color: white"><strong style="color: white">📜 History Hunter:</strong> Solve the mystery of 2 famous historical myths.</li>
-        <li style="color: white"><strong style="color: white">⚙️ Tech Detective:</strong> Bust 1 popular tech misconception.</li>
-      </ul>
-      <p>💡 Complete the challenge and unlock a secret badge to share with friends!</p>
-      <button style="padding: 10px 20px; background-color:  rgb(226, 97, 70); border: none; border-radius: 5px; color: white; font-size: 18px; cursor: pointer;">Start Myth Hunt</button>
-    </div>
+<style>
+  header {
+  background-image: url('img/mythheader.png');
+  background-size: cover;
+  background-repeat: no-repeat; /* Prevents tiling */
+  background-color: rgba(0, 0, 0, 0.5); /* Adds a dark transparent overlay */
+  background-blend-mode: overlay; /* Blends the dark overlay with the image */
+  margin-top:0px;
+  padding: 25px;
+  padding-top: 30px;
+  padding-bottom:650px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  height: auto;
+  position: relative;
+}
+.headertext2 h1{
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.headertext2 h2{
+position: absolute;
+top: 80%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 100%; 
+padding: 20px;
+}
+</style>
+
+<header>
+  <title> Myth Busters HQ </title>
+  <div class="headertext2">
+  <h1 style="text-align:center; font-size:450%;color: navajowhite;">Explore Myth</h1>
+  <h2 style="text-align:center; font-size:300%;color: whitesmoke;">Myths shape how we see Science, Health, History, and Technology.<br> Exploring them helps us separate truth from fiction.</br>
+  </h2></div>
+</header>
+  <body>
+      <main>
+        <h1 style="font-size:250%;color: navajowhite;gap:10px;">Category of Myths</h1>
+        <div class="category-buttons">
+          <button class="btn" onclick="changeContent('science')">Science Myths</button>
+          <button class="btn" onclick="changeContent('health')">Health Myths</button>
+          <button class="btn" onclick="changeContent('history')">History Myths</button>
+          <button class="btn" onclick="changeContent('technology')">Technology Myths</button>
+        </div>
+        <div class="content">
+          <img id="category-image" src="science.jpg" alt="Science Image">
+          <div class="text-content">
+            <h2 id="category-title">Science Myths</h2>
+            <p id="category-description">
+              Explore common misconceptions about the natural world, physics, and biology. These myths often stem from outdated knowledge or misunderstandings of scientific principles.
+            </p>
+            <a id="readmore-link" href="https://www.osc.org/popular-science-myths-debunked-clearing-up-misconceptions/" class="readmore" target="_blank">Read More</a>
+          </div>
+        </div>
+      </main>
+      
+      <script>
+        function changeContent(category) {
+          const title = document.getElementById('category-title');
+          const description = document.getElementById('category-description');
+          const image = document.getElementById('category-image');
+          const readMoreLink = document.getElementById('readmore-link'); // Select the Read More link
+      
+          if (category === 'science') {
+            title.textContent = 'Science Myths';
+            description.textContent =
+              'Explore common misconceptions about the natural world, physics, and biology. These myths often stem from outdated knowledge or misunderstandings of scientific principles.';
+            image.src = 'science.jpg';
+            image.alt = 'Science Image';
+            readMoreLink.href = 'https://www.osc.org/popular-science-myths-debunked-clearing-up-misconceptions/';
+          } else if (category === 'health') {
+            title.textContent = 'Health Myths';
+            description.textContent =
+              'Delve into widely believed health and wellness misconceptions, often perpetuated by misinformation or fear. Learn what science really says about your body and health habits.';
+            image.src = 'health.jpg';
+            image.alt = 'Health Image';
+            readMoreLink.href = 'https://www.mountelizabeth.com.sg/health-plus/article/10-health-myths-debunked';
+          } else if (category === 'history') {
+            title.textContent = 'History Myths';
+            description.textContent =
+              'Uncover myths that distort historical events or figures. These arise from exaggerations, misinterpretations, or myths perpetuated over time.';
+            image.src = 'history.jpg';
+            image.alt = 'History Image';
+            readMoreLink.href = 'https://www.thoughtco.com/top-historical-myths-debunked-1221615';
+          } else if (category === 'technology') {
+            title.textContent = 'Technology Myths';
+            description.textContent =
+              'Discover myths about how technology works and its impact on our lives. These often come from fears of new advancements or a lack of understanding.';
+            image.src = 'technology.jpg';
+            image.alt = 'Technology Image';
+            readMoreLink.href = 'https://connectedplatforms.com.au/tech-myths-that-still-persist/';
+          }
+        }
+      </script>
+      
+<div class="description">
+  <h1 style="font-size:250%;">Science</h1>
+   <p style="font-size:200%"><strong>Lightning never strikes the same place twice</strong><br>
+   Truth: Lightning frequently strikes the same location, especially tall structures like skyscrapers or trees.</p>
+   <p style="font-size:200%"><strong>Sugar causes hyperactivity in children</strong><br>
+   Truth: Studies have shown no direct link between sugar consumption and hyperactivity.</p>
+   <p style="font-size:200%"><strong>Vaccines cause autism</strong><br>
+  Truth: Numerous scientific studies have proven no connection between vaccines and autism.</p>
+</div>
+<div class="description">
+  <h1 style="font-size:250%;">Health</h1>
+    <p style="font-size:200%"><strong>Eating carrots improves your eyesight</strong> <br>
+    Truth: While carrots contain vitamin A, which is essential for eye health, they won’t dramatically enhance vision.</p>
+    <p style="font-size:200%"><strong>Shaving hair makes it grow back thicker</strong> <br>
+    Truth: Hair appears thicker due to the blunt ends after shaving, not because it grows back denser.</p>
+    <p style="font-size:200%"><strong>You need to drink eight glasses of water a day</strong> <br>
+   Truth:Water intake varies by individual needs, and many foods and drinks contribute to hydration.</p>
+</div>
+<div class="description">
+   <h1 style="font-size:250%;">History</h1>
+    <p style="font-size:200%"><strong>Vikings wore horned helmets</strong><br>
+    Truth: There’s no evidence that Vikings wore horned helmets; this image comes from 19th-century opera.</p>
+    <p style="font-size:200%"><strong>Napoleon was very short</strong><br>
+    Truth:  Napoleon was of average height for his time; the myth arose from confusion over French and British measurement units.</p>
+    <p style="font-size:200%"><strong>Einstein failed math as a child</strong><br>
+   Truth: Einstein excelled in math and physics from a young age.</p>
+</div>
+<div class="description">
+   <h1 style="font-size:250%;">Technology</h1>
+     <p style="font-size:200%"><strong>Macs can't get viruses</strong> <br>
+     Truth: Macs are susceptible to malware and viruses, just like other computers, although less frequently targeted.</p>
+     <p style="font-size:200%"><strong>Charging your phone overnight damages the battery</strong> <br>
+     Truth: Modern smartphones are designed to stop charging once the battery is full.</p>
+     <p style="font-size:200%"><strong> Private browsing mode keeps you completely anonymous </strong> <br>
+    Truth:Private browsing only hides your activity locally, not from your internet service provider or websites.</p>
+</div>
+<script>
+  document.querySelectorAll('.description').forEach(element => {
+  element.addEventListener('mouseover', () => {
+    element.style.opacity = '1';
+    element.style.transform = 'translateY(0)';
+    element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+  });
+});
+</script>
+<button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+<script>
+  let mybutton = document.getElementById("myBtn");
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+  </script>
+
+   <div style="background-color:rgb(255, 254, 238);font-size:120%;text-align:center;padding:30px;margin-top:10px;">©
+    2024 Copyright Myth Busters HQ</div>
+  </body>
+</html>

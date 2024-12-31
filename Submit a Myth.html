@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(12, 0, 0);
+        }
+        h2 {
+            font-size: 250%;
+            text-align: center;
+            color: whitesmoke;
+            margin-top: 20px;
+        }
+        .form-container {
+            background-color: white;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .form-container input, .form-container datalist {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .form-container input[type="submit"] {
+            background-color:rgb(226, 97, 70);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #e65500;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+          <img src="img/logo.png" alt="Myth Buster Logo" class="logo">
+          <span class="site-title">Myth Buster HQ</span>
+        </div>
+        <div class="nav-links">
+        <a href="index.html" class="hover-underline-animation">Home</a>
+        <a href="Explore Myths.html" class="hover-underline-animation">Explore Myths</a>
+        <a href="Myth Hunt.html" class="hover-underline-animation">Myth Quiz</a>
+        <a href="Submit a Myth.html" class="hover-underline-animation">Submit a Myth</a>
+      </div>
+      </nav>
+<h1 style="font-size:250%;">Submit a Myth</h1>
+<div class="form-container">
+    <form action="/action_page.php" target="_top" method="POST">
+        <label for="fname">Your Name:</label>
+        <input type="text" id="fname" name="fname" placeholder="Enter your name" required>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="rating">Rating:</label>
+        <input list="rating-options" id="rating" name="rating" placeholder="Choose a rating">
+        <datalist id="rating-options">
+            <option value="Excellent">
+            <option value="Good">
+            <option value="Average">
+            <option value="Poor">
+            <option value="Bad">
+        </datalist>
+
+        <label for="myth">Submit Your Myth:</label>
+        <input type="text" id="myth" name="myth" placeholder="Describe the myth" required>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+<div style="background-color:rgb(255, 254, 238);font-size:120%;text-align:center;padding:30px;margin-top:240px;">©
+    2024 Copyright Myth Busters HQ</div>
+</body>
+</html>

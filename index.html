@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html>
+<head>
 <link rel="stylesheet" href="style.css">
-
-<nav>
-    <a href="index.html"class="hover:text-black-600 font-bold">Home</a>
-    <a href="Explore Myths.html">Explore Myths</a>
-    <a href=>Myth Hunt</a>
-    <a href=>Submit a Myth</a>
-</nav>
-<header>
-  <title> Myth Busters HQ </title>
-  <h1 style="text-align:center; font-size:450%;">Myth Busters HQ</h1>
-  <h2 style="text-align:center; font-size:300%;">Discover the truth behind popular myths in science, health, history,
-    and technology. <br>Explore facts, test your knowledge, and learn something new every day!</h2>
-</header>
-
+<link rel="icon" type="image/x-icon" href="img/logo.png">
+</head>
 <body>
-  <div class="myth-breaking-section">
+  <nav>
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Myth Buster Logo" class="logo">
+      <span class="site-title">Myth Buster HQ</span>
+    </div>
+    <div class="nav-links">
+    <a href="index.html" class="hover-underline-animation">Home</a>
+    <a href="Explore Myths.html" class="hover-underline-animation">Explore Myths</a>
+    <a href="Myth Hunt.html" class="hover-underline-animation">Myth Quiz</a>
+    <a href="Submit a Myth.html" class="hover-underline-animation">Submit a Myth</a>
+  </div>
+  </nav>
+<header>
+  <title> Myth Buster HQ </title>
+  <div class="headertext">
+  <h1 style="text-align:center; font-size:450%;color: navajowhite;">Myth Busters HQ</h1>
+  <h2 style="text-align:center; font-size:300%;color: whitesmoke;"> Discover the truth behind popular myths in science, health, history,
+    and technology.<br>Explore facts, test your knowledge, and learn something new every day!</br></h2>
+  </div>
+</header>
+<div class="myth-breaking-section">
     <img src="img/magnifying-glass.png" alt="Myth Breaking Image" class="myth-image">
     
   <div class="myth-content">
@@ -28,28 +37,109 @@
      <h2 style="font-size:250%;text-align:left;">Break a myth</h2>
       <p style= "font-size:200%;text-align:left;">Myth-busting is saying or showing that something generally thought to be true is not, in fact, true, or is different from how it is usually described.</p> 
      </div>
-   </div>
   </div>
-    <h2 style="font-size:250%;">✨ What You Can Do Here:</h2>
+</div>
 
+<div class="video-container" id="video-container">
+ <iframe 
+      id="youtubeVideo"
+      width="1090"
+      height="620" 
+      src="https://www.youtube.com/embed/zX_h3Pc1VdM?enablejsapi=1&autoplay=1&mute=1" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+ </iframe>
+</div> 
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+  let player;
+
+  // Initialize YouTube Iframe API
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('youtubeVideo');
+  }
+
+  // Check if the video is in the viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return rect.top >= 0 && rect.bottom <= window.innerHeight;
+  }
+
+  // Pause or play video on scroll
+  window.addEventListener('scroll', () => {
+    const videoContainer = document.getElementById('video-container');
+    if (isInViewport(videoContainer)) {
+      player.playVideo();
+    } else {
+      player.pauseVideo();
+    }
+  });
+</script>
+ <h2 style="font-size:250%;"> What You Can Do Here:</h2>
   <div class="text-box-container">
     <div class="text-box" onclick="window.location.href='Explore Myths.html'">
       <h3><strong>Explore Myths:</strong></h3>
       <p>Browse our myth categories and uncover the surprising truths behind them</p><br>
     </div>
-    <div class="text-box">
+    <div class="text-box" onclick="window.location.href='Myth Hunt.html'">
       <h3><strong>Test Your Knowledge:</strong></h3>
       <p>Take fun quizzes to see how much you know about common myths</p><br>
     </div>
-    <div class="text-box">
+    <div class="text-box" onclick="window.location.href='Submit a Myth.html'">
       <h3><strong>Ask Us Anything:</strong></h3>
       <p>Got a myth on your mind? Share it with us, and we’ll uncover the truth for you!</p>
     </div>
   </div>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+  <script>
+    let mybutton = document.getElementById("myBtn");
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+  <script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+  </script>
     <div style="background-color:rgb(255, 254, 238);font-size:120%;text-align:center;padding:30px;margin-top:10px;">©
       2024 Copyright Myth Busters HQ</div>
 </body>
-
-
-
 </html>

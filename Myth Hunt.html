@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Myth Buster Logo" class="logo">
+      <span class="site-title">Myth Buster HQ</span>
+    </div>
+    <div class="nav-links">
+    <a href="index.html" class="hover-underline-animation">Home</a>
+    <a href="Explore Myths.html" class="hover-underline-animation">Explore Myths</a>
+    <a href="Myth Hunt.html" class="hover-underline-animation">Myth Quiz</a>
+    <a href="Submit a Myth.html" class="hover-underline-animation">Submit a Myth</a>
+  </div>
+  </nav>
+  
+<style>
+
+  .quiz-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color:white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .quiz-question {
+    margin-bottom: 20px;
+  }
+
+  .quiz-question h3 {
+    margin-bottom: 10px;
+    color: black;
+  }
+
+  button {
+    background-color: #e25d32;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+  }
+
+  button:hover {
+    background-color: #c34a27;
+  }
+
+  .result {
+    margin-top: 20px;
+    padding: 20px;
+    background-color:white;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .result h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .result p{
+    color:black;
+  }
+</style>
+</head>
+<h1 style="font-size:250%;">Myth Quiz</h1>
+
+<div class="quiz-container">
+  <form id="quizForm">
+    <div class="quiz-question">
+      <h3>1. Honey never spoils.</h3>
+      <input type="radio" id="q1a1" name="q1" value="correct">
+      <label for="q1a1">True</label><br>
+      <input type="radio" id="q1a2" name="q1" value="wrong">
+      <label for="q1a2">False</label>
+    </div>
+    <div class="quiz-question">
+      <h3>2. Cracking your knuckles causes arthritis.</h3>
+      <input type="radio" id="q2a1" name="q2" value="wrong">
+      <label for="q2a1">True</label><br>
+      <input type="radio" id="q2a2" name="q2" value="correct">
+      <label for="q2a2">False</label>
+    </div>
+    <div class="quiz-question">
+      <h3>3. Goldfish have a memory span of only 3 seconds.</h3>
+      <input type="radio" id="q3a1" name="q3" value="wrong">
+      <label for="q3a1">True</label><br>
+      <input type="radio" id="q3a2" name="q3" value="correct">
+      <label for="q3a2">False</label>
+    </div>
+    <div class="quiz-question">
+      <h3>4. Drinking too much water can be dangerous.</h3>
+      <input type="radio" id="q4a1" name="q4" value="correct">
+      <label for="q4a1">True</label><br>
+      <input type="radio" id="q4a2" name="q4" value="wrong">
+      <label for="q4a2">False</label>
+    </div>
+    <div class="quiz-question">
+      <h3>5. Bats are blind.</h3>
+      <input type="radio" id="q5a1" name="q5" value="wrong">
+      <label for="q5a1">True</label><br>
+      <input type="radio" id="q5a2" name="q5" value="correct">
+      <label for="q5a2">False</label>
+    </div>
+    <button type="button" onclick="submitQuiz()">Submit</button>
+  </form>
+  <div id="result" class="result" style="display: none;"></div>
+</div>
+
+
+<script>
+  function submitQuiz() {
+    const form = document.getElementById("quizForm");
+    const answers = form.querySelectorAll("input[type='radio']:checked");
+    let correct = 0;
+    let wrong = 0;
+
+    answers.forEach((answer) => {
+      if (answer.value === "correct") {
+        correct++;
+      } else if (answer.value === "wrong") {
+        wrong++;
+      }
+    });
+
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = `
+      <h3>Results:</h3>
+      <p>Correct Answers: ${correct}</p>
+      <p>Wrong Answers: ${wrong}</p>
+    `;
+    resultDiv.style.display = "block";
+  }
+</script>
+<style>
+  * {box-sizing: border-box}
+  
+  /* Slideshow container */
+  .slideshow-container {
+    position: relative;
+    background: transparent;
+    margin-left:400px;
+    margin-right:400px;
+  }
+  /* Slides */
+  .mySlides {
+    display: none;
+    padding: 80px;
+    text-align: center;
+    margin-top:20px;
+    margin-bottom:0px;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -30px;
+    padding: 16px;
+    color: rgb(255, 254, 238);
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  .next {
+    position: absolute;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+.prev:hover, .next:hover {
+  color: rgb(226, 97, 70);
+}
+
+  /* Add an italic font style to all quotes */
+  q {font-family:italic;font-size:200%;color:whitesmoke;}
+
+  </style>
+  </head>
+  <body>
+  <div class="slideshow-container">
+  <div class="mySlides">
+    <q>The human body has more bacteria than human cells.</q>
+  </div>
+  <div class="mySlides">
+    <q>Water can boil and freeze at the same time.</q>
+  </div>
+  <div class="mySlides">
+    <q>Sharks existed before trees.</q>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  </div>
+
+  <script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+  </script>
+
+<div style="background-color:rgb(255, 254, 238);font-size:120%;text-align:center;padding:30px;margin-top:120px;">©
+  2024 Copyright Myth Busters HQ</div>
+</body>
+</html>
